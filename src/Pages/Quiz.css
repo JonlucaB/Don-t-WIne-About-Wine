@@ -1,0 +1,49 @@
+/*This is the styling file for the quiz
+I have two examples here that we might use to style.
+You might place the slider in the slider box and style the sliderbox 
+to your liking, maybe its red and a rectangle idk thats your decision */
+li {
+    list-style-type: none;
+}
+
+ul {
+  font-size: 20px;
+  font: "Optima", sans-serif;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  color: white;
+  background-color: #B11226; 
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
