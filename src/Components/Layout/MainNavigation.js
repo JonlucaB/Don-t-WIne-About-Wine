@@ -5,6 +5,7 @@ import classes from "./MainNavigation.module.css";
 function MainNavigation() {
   return (
     <header className={classes.header}>
+      <div><img src="./Wine_Pixel_Logo.png"/></div>
       <div className={classes.logo}>
         <Link to="/">What Are You Wining About?</Link>
       </div>
