@@ -20,8 +20,8 @@ function generateWines(props) {
   }
   */
 
-import WineDisplay from "../Components/WineDisplay";
-import twentyWines from "../Data/wine_data";
+import WineDisplay from "../Components/WineDisplay.js";
+import twentyWines from "../Data/wine_data.js";
 import "./AllWines.css";
 
 function AllWinesPage() {

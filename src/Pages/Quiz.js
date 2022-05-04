@@ -1,19 +1,32 @@
 import "./Quiz.css";
+import match from "../Data/Match.js";
+import PriorityQueue from "../Data/PriorityQueue.js";
+import WineDisplay from "../Components/WineDisplay.js";
 
 function submitQuiz() {
+  //grab results from quiz
   const priceScale = document.getElementById("priceScale").value;
   const sweetScale = document.getElementById("sweetScale").value;
   const yearScale = document.getElementById("yearScale").value;
   const location = document.getElementById("regionInput").value;
   const redWine = document.getElementById("redWine").checked;
   const whiteWine = document.getElementById("whiteWine").checked;
+  const dessertWine = document.getElementById("dessertWine").checked;
 
-  console.log("Price: " + priceScale);
-  console.log("Sweetness: " + sweetScale);
-  console.log("Year: " + yearScale);
-  console.log("Location: " + location);
-  console.log("Red Wine: " + redWine);
-  console.log("White Wine: " + whiteWine);
+  //put types of wine user chose together
+  var type = ""
+  if(redWine) type += "red";
+  if(whiteWine) type += "white";
+  if(dessertWine) type += "dessert";
+
+  //create priority queue of matched wines and print them out
+  var wineMatches = new PriorityQueue();
+  wineMatches = match(priceScale, sweetScale, yearScale, location, type);
+  //console.log(wineMatches.front().element.name);
+  while(!wineMatches.isEmpty()) {
+    const w = wineMatches.dequeue();
+    console.log(w.element.name, w.priority);
+  }
 }
 // on submit, show results
 //submitButton.addEventListener("click", submitQuiz);
@@ -30,13 +43,16 @@ export default function QuizPage() {
     <center>
       <div>
         <li>
-          <ul>What color would you like your wine?</ul>
+          <ul>What type of wine would you like?</ul>
           <ul>
             <input type="checkbox" id="redWine" />
             <label for="redWine"> Red</label>
             <br />
             <input type="checkbox" id="whiteWine" />
             <label for="whiteWine"> White</label>
+            <br />
+            <input type="checkbox" id="dessertWine" />
+            <label for="dessertWine"> Dessert</label>
           </ul>
           <ul>How expensive?</ul>
           <ul>
@@ -45,7 +61,7 @@ export default function QuizPage() {
               id="priceScale"
               name = "$"
               min="10"
-              max="10000"
+              max="500"
               onChange={getInputValue}
               append = "$"
             /><br/>
@@ -75,7 +91,7 @@ export default function QuizPage() {
             /><br/>
             <output>Circa 1750</output>
           </ul>
-          <ul>Region? (cuntry)</ul>
+          <ul>Region?</ul>
           <ul>
             <input type="text" id="regionInput" />
           </ul>
