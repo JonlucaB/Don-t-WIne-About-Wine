@@ -178,6 +178,7 @@ const wineSeventeen = Wine(
   "2021",
   "Califoria",
   "90",
+  "20",
   "https://www.aldi.us/fileadmin/fm-dam/Products/Categories/Alcohol/Red_Wine/winking-owl-cabernet-sauvignon-desktop-lt.jpg"
 );
 const wineEighteen = Wine(

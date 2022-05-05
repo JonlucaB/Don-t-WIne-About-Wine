@@ -1,13 +1,21 @@
 import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-import AllWinesPage from "./Pages/AllWines";
-import ProfilePage from "./Pages/Profile";
-import QuizPage from "./Pages/Quiz";
-import MainNavigation from "./Components/Layout/MainNavigation";
-import HomePage from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard";
+<<<<<<< HEAD
+import AllWinesPage from "./Pages/AllWines.js";
+import ProfilePage from "./Pages/Profile.js";
+import QuizPage from "./Pages/Quiz.js";
+import MainNavigation from "./Components/Layout/MainNavigation.js";
+import HomePage from "./Pages/Home.js";
+import Dashboard from "./Pages/Dashboard.js";
 import ProtectedRoute from "./ProtectedRoute";
+=======
+import AllWinesPage from "./Pages/AllWines.js";
+import ProfilePage from "./Pages/Profile.js";
+import QuizPage from "./Pages/Quiz.js";
+import MainNavigation from "./Components/Layout/MainNavigation.js";
+import HomePage from "./Pages/Home.js";
+>>>>>>> matchAlgorithm
 
 function App() {
   return (
