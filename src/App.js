@@ -8,6 +8,8 @@ import MainNavigation from "./Components/Layout/MainNavigation.js";
 import HomePage from "./Pages/Home.js";
 import Dashboard from "./Pages/Dashboard.js";
 
+import ResultsPage from "./Pages/Results.js";
+
 function App() {
   return (
     <div>
@@ -18,6 +20,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/take-the-quiz" element={<QuizPage />} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/results" element={<ResultsPage/>} />
         {/* <ProtectedRoute path="/dashboard" element={<Dashboard/>}/> */}
       
 

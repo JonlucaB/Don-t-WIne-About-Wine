@@ -2,6 +2,9 @@ import "./Quiz.css";
 import match from "../Data/Match.js";
 import PriorityQueue from "../Data/PriorityQueue.js";
 import WineDisplay from "../Components/WineDisplay.js";
+import { Navigate, Navigation, useNavigate } from "react-router-dom";
+
+var wineQueue = new PriorityQueue();
 
 function submitQuiz() {
   //grab results from quiz
@@ -22,12 +25,19 @@ function submitQuiz() {
   //create priority queue of matched wines and print them out
   var wineMatches = new PriorityQueue();
   wineMatches = match(priceScale, sweetScale, yearScale, location, type);
-  //console.log(wineMatches.front().element.name);
+  wineQueue = wineMatches;
+  console.log(wineMatches.front().element.name);
+  /*
   while(!wineMatches.isEmpty()) {
     const w = wineMatches.dequeue();
     console.log(w.element.name, w.priority);
   }
+  */
 }
+
+
+
+
 // on submit, show results
 //submitButton.addEventListener("click", submitQuiz);
 //test
@@ -38,6 +48,13 @@ export default function QuizPage() {
   const getInputValue = (event) => {
     event.target.nextElementSibling.nextSibling.value = event.target.name + event.target.value;
   };
+
+  let navigate = useNavigate();
+  const routeChange = () =>{
+    submitQuiz();
+    navigate("/results");
+  
+  }
 
   return (
     <center>
@@ -96,7 +113,7 @@ export default function QuizPage() {
             <input type="text" id="regionInput" />
           </ul>
         </li>
-        <button id="submit" onClick={submitQuiz}>
+        <button id="submit" onClick={routeChange}>
           Submit
         </button>
       </div>
