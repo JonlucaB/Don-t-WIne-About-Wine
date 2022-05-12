@@ -27,6 +27,8 @@ function submitQuiz() {
     const w = wineMatches.dequeue();
     console.log(w.element.name, w.priority);
     document.write(w.element.name)
+
+    document.write("<br></br>")
   }
 }
 
