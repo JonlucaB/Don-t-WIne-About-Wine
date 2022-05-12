@@ -3,17 +3,11 @@ function HomePage() {
     <div>
       <h1 align="center">Welcome to Don't Whine About Wine!</h1>
       <br></br>
-<<<<<<< HEAD
-      <p align="center">
-      <iframe src="https://drive.google.com/file/d/1l0Z9P6whateBDzLQAKMOWFbVBZ6R_UUQ/preview" width="640" height="480" allow="autoplay"></iframe>
-      </p>
-=======
       <div> 
       <p align="center"> 
       <iframe src="https://drive.google.com/file/d/1l0Z9P6whateBDzLQAKMOWFbVBZ6R_UUQ/preview" width="640" height="480" allow="autoplay"></iframe>
       </p>
       </div>
->>>>>>> emery
       <br></br>
       <br></br>
       <br></br>
