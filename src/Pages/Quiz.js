@@ -26,8 +26,10 @@ function submitQuiz() {
   while(!wineMatches.isEmpty()) {
     const w = wineMatches.dequeue();
     console.log(w.element.name, w.priority);
+    document.write(w.element.name)
   }
 }
+
 // on submit, show results
 //submitButton.addEventListener("click", submitQuiz);
 //test
